@@ -1,7 +1,8 @@
 package com.example.lab_week_03
 
-import android.os.Bundle
+import android.content.Context
 import android.util.Log
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,11 @@ class MainFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        Log.d(TAG, "onAttach")
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +70,6 @@ class MainFragment : Fragment() {
         Log.d(TAG, "onDetach")
     }
 
-
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -83,7 +88,7 @@ class MainFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
-        private const val TAG = "MainFragment"
 
+        private const val TAG = "MainFragment"
     }
 }
